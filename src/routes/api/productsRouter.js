@@ -34,7 +34,7 @@ router.get("/:pid", async (req, res) => {
 
 router.post("/", async (req, res) => {
     const { title, description, code, price,
-         stock,  img } = req.body
+         stock } = req.body
 
     if (title !== undefined && description !== undefined && code !== undefined && price !== undefined &&  stock !== undefined ) {
         try {
@@ -43,9 +43,9 @@ router.post("/", async (req, res) => {
             let codeValidated = code.toString()
             let priceValidated = parseFloat(price)
             let stockValidated = parseInt(stock)
-            let imgValidated = img.toString()
+        
             
-            let arrProduct = await db.addProduct(titleValidated, descriptionValidated, codeValidated, priceValidated, stockValidated, imgValidated)
+            let arrProduct = await db.addProduct(titleValidated, descriptionValidated, codeValidated, priceValidated, stockValidated)
             res.status(200).json({ result: arrProduct })
         } catch (error) {
             res.status(500).json({ error: error })
@@ -68,7 +68,6 @@ router.put("/:pid", async (req, res) => {
             if (objeChanges.code) objeChanges.code = objeChanges.code.toString()
             if (objeChanges.price) objeChanges.price = parseFloat(objeChanges.price)
             if (objeChanges.stock) objeChanges.stock = parseInt(objeChanges.stock)
-            if (objeChanges.img) objeChanges.img = objeChanges.img.toString();
                                  
             let arrProduct = await db.updateProduct(pid, objeChanges)
             res.status(200).json({ result: arrProduct })

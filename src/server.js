@@ -22,7 +22,7 @@ const PORT = 8080;
 const httpServer = app.listen(PORT, () => {
     console.log("Escuchando en puerto " + PORT);
 });
-
+//config socket
 const socketServer = new Server(httpServer);
 let p = 0;
 socketServer.on('connection', async (socket) => {

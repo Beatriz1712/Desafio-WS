@@ -18,7 +18,7 @@ export default class ProductManager {
                     let codeValidated = code.toString()
                     let priceValidated = parseFloat(price)
                     let stockValidated = parseInt(stock)
-                    let imgValidated = img
+                
                     
 
                     let product = {
@@ -26,7 +26,6 @@ export default class ProductManager {
                         title :titleValidated,
                         description: descriptionValidated,
                         price: priceValidated,
-                        img: imgValidated,
                         code: codeValidated,
                         stock: stockValidated
                     
@@ -126,7 +125,7 @@ export default class ProductManager {
 
             }
             else {
-                return "Error: Not found"
+                return "Error: No encontrado"
             }
 
 

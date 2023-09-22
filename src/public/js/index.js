@@ -29,7 +29,6 @@ socketClient.on('productList', products => {
             <p>Id producto: ${product.id}</p>
             <p>Descripcion: ${product.description}</p>
             <p>Precio: $${product.price}</p>
-                ${img}
             <p>Codigo: ${product.code}</p>
             <p>Stock: ${product.stock}</p>
             
