@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { dbInstance } from './api/productsRouter.js';
+//import { dbInstance } from './api/productsRouter.js';
 // Importar todos los routers;
 export const router = Router();
 
